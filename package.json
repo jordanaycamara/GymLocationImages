@@ -1,16 +1,16 @@
 {
-  "name": "GymLocationImages",
-  "version": "1.0.0",
-  "description": "Pokemon Go Pittsburgh gym gym location image downloader",
-  "main": "index.js",
-  "dependencies": {
-    "PgP-Data": "github:Googer/PgP-Data",
-    "then-request": "^4.1.0"
-  },
-  "scripts": {
-    "start": "node index.js",
-    "debug": "node %NODE_DEBUG_OPTION% index.js"
-  },
-  "author": "Matt Legowski",
-  "license": "Apache License 2.0"
+    "name": "GymLocationImages",
+    "version": "1.0.0",
+    "description": "Pokemon Go Pittsburgh gym gym location image downloader",
+    "main": "index.js",
+    "dependencies": {
+        "PgP-Data": "github:jordanaycamara/PgP-Data",
+        "then-request": "^4.1.0"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "debug": "node %NODE_DEBUG_OPTION% index.js"
+    },
+    "author": "Matt Legowski",
+    "license": "Apache License 2.0"
 }
