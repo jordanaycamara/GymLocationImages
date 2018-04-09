@@ -9,7 +9,7 @@ if (!fs.existsSync('./images')) {
 }
 
 gyms
-    .filter(gym => !fs.existsSync('./images/${gym.gymId}.png'))
+    .filter(gym => !fs.existsSync(`./images/${gym.gymId}.png`))
     .forEach(async gym => {
         const id = gym.gymId,
             latitude = gym.gymInfo.latitude,
@@ -20,12 +20,12 @@ gyms
             zoom = settings.zoom,
             googleKey = googleSettings.google_api_key,
             path = '/maps/api/staticmap?' +
-            'size=${width}x${height}&' +
-            'scale=${scale}&' +
-            'zoom=${zoom}&' +
-            'markers=color:red|${latitude},${longitude}&' +
-            'key=${googleKey}';
+            `size=${width}x${height}&` +
+            `scale=${scale}&` +
+            `zoom=${zoom}&` +
+            `markers=color:red|${latitude},${longitude}&` +
+            `key=${googleKey}`;
 
-        await request('GET', 'https://maps.googleapis.com${path}')
-            .done(result => fs.writeFileSync('./images/${id}.png', result.getBody()), 'binary');
+        await request('GET', `https://maps.googleapis.com${path}`)
+            .done(result => fs.writeFileSync(`./images/${id}.png`, result.getBody()), 'binary');
     });
